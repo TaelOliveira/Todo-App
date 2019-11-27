@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create New Item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div>
+
+  </div>
+
+  <form [formGroup]="todoForm" (ngSubmit)='createTodo()'>
+
+    <ion-text><h1>Todo Details</h1></ion-text>
+    <ion-textarea formControlName="content"></ion-textarea>
+
+    <ion-text color="danger"><h2>Status</h2></ion-text>
+
+    <ion-list>
+
+      <ion-radio-group formControlName="status">
+
+        <ion-item>
+          <ion-text color="success"><h3>Pending</h3></ion-text>
+          <ion-radio slot="start" value="pending" checked></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-text color="success"><h3>Complete</h3></ion-text>
+          <ion-radio slot="start" value="complete"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+    </ion-list>
+
+    <ion-button [disabled]="todoForm.invalid" type="submit">Create!</ion-button>
+
+  </form>
+
+</ion-content>
