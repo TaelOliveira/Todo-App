@@ -4,7 +4,6 @@ import {switchMap, map, switchMapTo, shareReplay} from 'rxjs/operators';
 import {DbService} from '../services/db.service';
 import {ModalController} from '@ionic/angular';
 import {TodoFormComponent} from './todo-form/todo-form.component';
-import { modalController } from '@ionic/core';
 
 @Component({
   selector: 'app-todo',
@@ -32,10 +31,6 @@ export class TodoPage implements OnInit {
 
   updateFilter(val){
     this.filter.next(val);
-  }
-
-  trackById(id, todo){
-    return todo.id;
   }
 
   deleteTodo(todo){
